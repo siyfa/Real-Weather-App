@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="A Web Weather Application" />
+    <title>Real Weather Web Application</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Alfa Slab One:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Audiowide:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="theme-color" content="#663399" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="manifest" href="/manifest.json" />
+  </head>
+
+  <body>
+    <header>
+      <h1>REAL WEATHER</h1>
+    </header>
+
+    <main>
+      <section class="top-section">
+        <div class="form">
+          <input
+            type="text"
+            class="inputValue"
+            placeholder="Search City"
+            aria-label="searchbox"
+          />
+          <button
+            class="submitBtn"
+            type="submit"
+            role="button"
+            aria-label="search button"
+          >
+            <i class="fas fa-search"></i>
+            <button
+              class="locationBtn"
+              role="button"
+              aria-label="location button"
+            >
+              <i class="fas fa-location-arrow"></i>
+            </button>
+          </button>
+        </div>
+      </section>
+
+      <section class="main-section">
+        <div class="main-section-body">
+          <button
+            class="tablink"
+            onclick="openWeather('Current', this, 'rebeccapurple')"
+            id="defaultOpen"
+          >
+            Now
+          </button>
+          <button
+            class="tablink"
+            onclick="openWeather('Forecast', this, 'rebeccapurple')"
+          >
+            Forecast
+          </button>
+
+          <div id="Current" class="tabcontent">
+            <div class="tabmain">
+              <div class="weather-container">
+                <div class="weather-header">
+                  <div class="weather-icon">
+                    <img src="./icons/unknown.png" alt="icon" />
+                  </div>
+                  <div class="weather-header-aside">
+                    <div class="temperature-value">
+                      <p>- °<span>C</span></p>
+                      <button class="convert">° Convert to Fahrenheit</button>
+                    </div>
+                    <div class="temperature-description">
+                      <p>-</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="location">
+                  <p>-</p>
+                  <date></date>
+                </div>
+                <div class="weather-body">
+                  <ul>
+                    <li>
+                      <p class="pressure">
+                        <i
+                          class="fab fa-superpowers"
+                          style="font-size: 24px"
+                        ></i>
+                        hpa
+                      </p>
+                      <p>Pressure</p>
+                    </li>
+                    <li>
+                      <p class="windSpeed">
+                        <i class="fas fa-wind" style="font-size: 24px"></i> m/s
+                      </p>
+                      <p>Wind speed</p>
+                    </li>
+                    <li>
+                      <p class="humidity">
+                        <i class="fas fa-water" style="font-size: 24px"></i> %
+                      </p>
+                      <p>Humidity</p>
+                    </li>
+                    <li>
+                      <p class="maxTemp">
+                        <i
+                          class="fas fa-temperature-high"
+                          style="font-size: 24px"
+                        ></i>
+                        high
+                      </p>
+                      <p>Max temperature</p>
+                    </li>
+                    <li>
+                      <p class="minTemp">
+                        <i
+                          class="fas fa-temperature-low"
+                          style="font-size: 24px"
+                        ></i>
+                        low
+                      </p>
+                      <p>Min temperature</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="Forecast" class="tabcontent">
+            <div class="tabmain">
+              <div class="forecast-weather">
+                <div class="forecast-1"></div>
+                <div class="forecast-2"></div>
+                <div class="forecast-3"></div>
+                <div class="forecast-4"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      function openWeather(weatherType, elmnt, color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(weatherType).style.display = "block";
+        elmnt.style.backgroundColor = color;
+      }
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+    </script>
+
+    <script src="./app.js"></script>
+    <script src="./sw.js"></script>
+  </body>
+</html>

@@ -1,0 +1,185 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Audiowide", Arial, Helvetica, sans-serif;
+}
+@font-face {
+  font-family: "Open Sans Regular";
+  font-style: normal;
+  src: url("fonts/OpenSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+header h1 {
+  text-align: center;
+  color: rebeccapurple;
+  margin: 0;
+  padding: 5px;
+  font-family: "Alfa Slab One", Arial, Helvetica, sans-serif;
+}
+.top-section {
+  background-color: #663399;
+}
+.form {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+.submitBtn,
+.locationBtn {
+  width: 40px;
+  height: 50px;
+  border: 1px solid rgb(19, 18, 18);
+  background: rgb(15, 15, 15);
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+input[type="text"] {
+  width: 100px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  outline: none;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  padding: 12px 20px 12px 20px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type="text"]:focus {
+  width: 100%;
+}
+@media only screen and (max-width: 768px) {
+  .form {
+    justify-content: flex-end;
+  }
+}
+.main-section {
+  width: 100%;
+  position: absolute;
+  background-color: rgb(223, 204, 241);
+}
+.main-section-body {
+  margin-left: 30%;
+}
+.tablink {
+  background-color: rgb(248, 241, 241);
+  color: rgb(99, 13, 77);
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 5px;
+  font-size: 17px;
+  width: 25%;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.tablink:hover {
+  background-color: rgb(56, 52, 52);
+}
+
+.tabcontent {
+  display: none;
+  padding-top: 2pc;
+  text-align: center;
+}
+.tabmain {
+  position: relative;
+  margin-right: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+  .main-section-body {
+    margin-left: 0px;
+  }
+  .tablink {
+    width: 50%;
+  }
+  .tabmain {
+    margin-right: 0px;
+  }
+  .tabcontent {
+    padding-top: 2pc;
+  }
+}
+.convert {
+  padding: 2px;
+  border-radius: 5px;
+  background-color: rgb(71, 157, 255);
+  border: none;
+  outline: none;
+}
+.weather-header {
+  border: 1px solid rebeccapurple;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.weather-icon img {
+  object-fit: cover;
+  margin-left: 10px;
+  display: block;
+  max-width: 100%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+}
+.weather-header-aside {
+  margin-right: 20px;
+  padding: 20px;
+}
+.weather-header-aside .temperature-value p {
+  font-size: 2em;
+}
+.weather-header {
+  background-color: #b6cce9;
+}
+.weather-body {
+  box-sizing: border-box;
+  margin-left: -37px;
+  background-color: #dfccf1;
+}
+.weather-body ul li {
+  list-style-type: none;
+  display: block;
+  display: flex;
+  justify-content: space-between;
+}
+.forecastBody {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.forecast-1,
+.forecast-2,
+.forecast-3,
+.forecast-4 {
+  border: 1px solid rgb(247, 240, 246);
+  background-color: #b6cce9;
+}
+.forecast-1 {
+  margin-top: 5px;
+}
+.forecast-weather date {
+  font-size: 1.1em;
+  padding: 5;
+  font-weight: bold;
+}
+.forecastBody img {
+  object-fit: cover;
+  width: 100%;
+  display: block;
+  max-width: 100%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+}
